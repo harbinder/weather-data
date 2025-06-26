@@ -1,4 +1,4 @@
-name: Weather Logger Go
+name: Weather Logging Cron
 
 on:
   schedule:
