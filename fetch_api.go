@@ -44,7 +44,7 @@ func main() {
         return
     }
 
-    cities := []string{"Delhi","London","New York","Tokyo","Sydney","Paris","Mumbai","Dubai","Beijing","Berlin"}
+    cities := []string{"Delhi", "Mumbai", "Kolkata", "Bangalore"} //,"London","New York","Tokyo","Sydney","Paris","Mumbai","Dubai","Beijing","Berlin"}
 
     isNew := false
     if _, err := os.Stat("weather_data.csv"); os.IsNotExist(err) {
