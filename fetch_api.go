@@ -7,6 +7,7 @@ import (
     "net/http"
     "os"
     "time"
+    _ "github.com/joho/godotenv"
 )
 
 type WeatherResponse struct {
