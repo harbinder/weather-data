@@ -86,13 +86,13 @@ type WeatherResponse struct {
 	*/
 	Sys struct {
 		Country string `json:"country"`
-		Sunrise int    `json:"sunrise"`
-		Sunset  int    `json:"sunset"`
+		Sunrise int64  `json:"sunrise"`
+		Sunset  int64  `json:"sunset"`
 	} `json:"sys"`
 	//ID int `json:"id"`
 	Name     string `json:"name"`
 	Timezone int    `json:"timezone"`
-	DT       int    `json:"dt"`
+	DT       int64  `json:"dt"`
 	//Base string `json:"base"`
 	// Cod int `json:"cod"` // Not used in this example
 	// Visibility is in meters
@@ -118,6 +118,10 @@ func fetchWeather(city, apiKey string, writer *csv.Writer) {
 	}
 
 	ts := time.Now().Format("2006-01-02 15:04:05")
+	timestamp := time.Unix(data.DT, 0).Format("2006-01-02 15:04:05")
+	Sunrise := time.Unix(data.Sys.Sunrise, 0).Format("2006-01-02 15:04:05")
+	Sunset := time.Unix(data.Sys.Sunset, 0).Format("2006-01-02 15:04:05")
+
 	csvData := make([]string, 0, 18)
 	csvData = append(csvData,
 		ts,
@@ -131,9 +135,7 @@ func fetchWeather(city, apiKey string, writer *csv.Writer) {
 		fmt.Sprintf("%d", data.Main.GrndLevel),
 		fmt.Sprintf("%d%%", data.Main.Humidity),
 		fmt.Sprintf("%d", data.Main.Pressure),
-		fmt.Sprintf("%d", data.DT),
-		fmt.Sprintf("%d", data.Sys.Sunrise),
-		fmt.Sprintf("%d", data.Sys.Sunset),
+		timestamp, Sunrise, Sunset,
 		fmt.Sprintf("%.2f", data.Wind.Speed),
 		fmt.Sprintf("%d", data.Wind.Deg),
 		fmt.Sprintf("%.2f", data.Wind.Gust),
