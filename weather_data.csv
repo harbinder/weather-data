@@ -1,0 +1,5 @@
+Timestamp,City (Country),Weather Description,Temperature (°C),Feels Like (°C),Min(°C),Max(°C),Sea Level,Ground Level,Humidity,Pressure,Timestamp (UTC),Sunrise (UTC),Sunset (UTC),Wind Speed (m/s),Wind Direction,Gust,Visibility (m)
+2025-06-29 16:03:02,Delhi (IN),overcast clouds,26.92,29.30,26.92,26.92,996,971,77%,996,1751192364,1751154954,1751205179,1.78,326,1.42,10000
+2025-06-29 16:03:02,Mumbai (IN),overcast clouds,27.99,32.54,27.99,27.99,1004,1003,83%,1004,1751192997,1751157242,1751204989,10.25,236,13.54,10000
+2025-06-29 16:03:02,Kolkata (IN),overcast clouds,28.06,32.57,28.06,28.06,995,994,82%,995,1751192654,1751153084,1751201695,4.07,121,5.10,10000
+2025-06-29 16:03:03,Bengaluru (IN),overcast clouds,28.57,29.69,28.57,28.57,1008,910,55%,1008,1751192879,1751156788,1751203160,8.91,266,11.23,10000
