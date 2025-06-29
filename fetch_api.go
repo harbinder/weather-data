@@ -147,10 +147,10 @@ func fetchWeather(city, apiKey string, writer *csv.Writer) {
 
 func main() {
 	csvHeader := []string{
-		"Timestamp", "City (Country)", "Weather Description",
+		"Execution Timestamp", "Date Time", "Sunrise", "Sunset",
+		"City (Country)", "Weather Description",
 		"Temperature (°C)", "Feels Like (°C)", "Min(°C)", "Max(°C)",
 		"Sea Level", "Ground Level", "Humidity", "Pressure",
-		"Timestamp (UTC)", "Sunrise (UTC)", "Sunset (UTC)",
 		"Wind Speed (m/s)", "Wind Direction", "Gust", "Visibility (m)",
 	}
 	apiKey := os.Getenv("WEATHER_API_KEY")
