@@ -9,7 +9,7 @@ jobs:
   fetch-and-commit:
     runs-on: ubuntu-latest
     env:
-      API_KEY: ${{ secrets.API_KEY }}
+      WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
 
     steps:
       - uses: actions/checkout@v4
