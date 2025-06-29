@@ -117,14 +117,15 @@ func fetchWeather(city, apiKey string, writer *csv.Writer) {
 		return
 	}
 
-	ts := time.Now().Format("2006-01-02 15:04:05")
-	timestamp := time.Unix(data.DT, 0).Format("2006-01-02 15:04:05")
-	Sunrise := time.Unix(data.Sys.Sunrise, 0).Format("2006-01-02 15:04:05")
-	Sunset := time.Unix(data.Sys.Sunset, 0).Format("2006-01-02 15:04:05")
+	loc, _ := time.LoadLocation("Asia/Kolkata")
+	executionTime := time.Now().In(loc).Format("2006-01-02 15:04:05")
+	dateTime := time.Unix(data.DT, 0).In(loc).Format("2006-01-02 15:04:05")
+	Sunrise := time.Unix(data.Sys.Sunrise, 0).In(loc).Format("2006-01-02 15:04:05")
+	Sunset := time.Unix(data.Sys.Sunset, 0).In(loc).Format("2006-01-02 15:04:05")
 
 	csvData := make([]string, 0, 18)
 	csvData = append(csvData,
-		ts,
+		executionTime, dateTime, Sunrise, Sunset,
 		fmt.Sprintf("%s (%s)", data.Name, data.Sys.Country),
 		data.Weather[0].Description,
 		fmt.Sprintf("%.2f", data.Main.Temp),
@@ -135,7 +136,6 @@ func fetchWeather(city, apiKey string, writer *csv.Writer) {
 		fmt.Sprintf("%d", data.Main.GrndLevel),
 		fmt.Sprintf("%d%%", data.Main.Humidity),
 		fmt.Sprintf("%d", data.Main.Pressure),
-		timestamp, Sunrise, Sunset,
 		fmt.Sprintf("%.2f", data.Wind.Speed),
 		fmt.Sprintf("%d", data.Wind.Deg),
 		fmt.Sprintf("%.2f", data.Wind.Gust),
@@ -159,7 +159,10 @@ func main() {
 		return
 	}
 
-	cities := []string{"Delhi", "Mumbai", "Kolkata", "Bangalore"}
+	cities := []string{
+		"Delhi", "Mumbai", "Kolkata", "Bangalore", "Lucknow",
+		"Chennai", "Hyderabad", "Patna", "Nagpur", "Jaipur",
+	}
 	//,"London","New York","Tokyo","Sydney","Paris","Mumbai","Dubai","Beijing","Berlin"}
 
 	isNew := false
