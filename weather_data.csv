@@ -1,3 +1,4 @@
+Timestamp,City (Country),Weather Description,Temperature (°C),Feels Like (°C),Min(°C),Max(°C),Sea Level,Ground Level,Humidity,Pressure,Timestamp (UTC),Sunrise (UTC),Sunset (UTC),Wind Speed (m/s),Wind Direction,Gust,Visibility (m)
 2025-06-29 17:15:40,2025-06-29 17:06:02,2025-06-29 05:25:54,2025-06-29 19:22:59,Delhi (IN),mist,28.05,34.64,28.05,28.05,995,970,94%,995,3.09,140,0.00,2000
 2025-06-29 17:15:40,2025-06-29 17:09:02,2025-06-29 06:04:02,2025-06-29 19:19:49,Mumbai (IN),haze,28.99,34.50,28.99,29.94,1003,1003,79%,1003,5.14,250,0.00,5000
 2025-06-29 17:15:40,2025-06-29 17:10:48,2025-06-29 04:54:44,2025-06-29 18:24:55,Kolkata (IN),haze,28.97,35.55,28.97,28.97,994,994,84%,994,2.06,350,0.00,4500
