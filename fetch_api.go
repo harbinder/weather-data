@@ -159,10 +159,14 @@ func main() {
 		return
 	}
 
+	
+	cities := []string{"Delhi"}
+	/*
 	cities := []string{
 		"Delhi", "Mumbai", "Kolkata", "Bangalore", "Lucknow",
 		"Chennai", "Hyderabad", "Patna", "Nagpur", "Jaipur",
 	}
+        */
 	//,"London","New York","Tokyo","Sydney","Paris","Mumbai","Dubai","Beijing","Berlin"}
 
 	isNew := false
