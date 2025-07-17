@@ -146,6 +146,12 @@ func fetchWeather(city, apiKey string, writer *csv.Writer) {
 }
 
 func main() {
+	// Run script only till 30 July,2025
+	endDate := time.Date(2025, 7, 30, 23, 59, 59, 0, time.UTC)
+	if time.Now().After(endDate) {
+		fmt.Println("Stopping script: Date is after 30 July 2025")
+		os.Exit(0)
+	}
 	csvHeader := []string{
 		"Execution Timestamp", "Date Time", "Sunrise", "Sunset",
 		"City (Country)", "Weather Description",
